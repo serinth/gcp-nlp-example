@@ -40,7 +40,7 @@ func main() {
 	demux := twitter.NewSwitchDemux()
 	demux.Tweet = func(tweet *twitter.Tweet) {
 		tweetHandler.Handle(tweet)
-		time.Sleep(time.Second * 5)
+		time.Sleep(time.Second * 2)
 	}
 
 	log.Println("Starting Stream...")

@@ -34,7 +34,7 @@ func (h *Handler) Handle(tweet *twitter.Tweet) {
 
 	h.getEntities(tweet.Text)
 
-	log.Printf("%s is %s with score %f", tweet.Text, sentimentText, sentimentScore)
+	log.Printf("%s is %s with score %f \n\n", tweet.Text, sentimentText, sentimentScore)
 }
 
 func (h *Handler) getSentiment(text string) float32 {
@@ -56,7 +56,6 @@ func (h *Handler) getSentiment(text string) float32 {
 }
 
 func (h *Handler) getEntities(text string) {
-	// TODO: Fill request struct fields.
 	entities, err := h.client.AnalyzeEntities(h.context, &languagepb.AnalyzeEntitiesRequest{
 		Document: &languagepb.Document{
 			Source: &languagepb.Document_Content{
