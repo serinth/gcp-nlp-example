@@ -2,42 +2,51 @@
 
 Uses Google's Natural Language processing API to analyze tweets mentioning **Trump**.
 
-# Sample Sentiment Output
-Formatted to be readable:
+# Quickstart
+```bash
+go get ./...
+go build .
+./gcp-nlp-example # add .exe for Windows
 ```
-2017/03/09 14:46:55 RT @JoyAnnReid: 
-In today's episode of #TheKleptocrats ... https://t.co/8YXN65lAFA is POSITIVE with score 0.300000
-
-2017/03/09 14:47:00 RT @blakehounshell: 
-If the Obamacare repeal/replace fails, Trump tells conservatives that Plan B is to just blame Democrats https://t.co/XX… is NEGATIVE with score -0.500000
-
-2017/03/09 14:47:05 RT @jk_rowling: 
-'I have tremendous respect for women and the many roles they serve that are vital to the fabric of our society &amp; ou…  is POSITIVE with score 0.100000
-
-2017/03/09 14:47:11 
-This is the leader of the free world, everybody. https://t.co/iUi726WJuR is POSITIVE with score 0.300000
-
-2017/03/09 14:47:16 RT @saletan: 
-But please don't take this as an indication that anything might turn up if we investigate Trump associates' busines…  is POSITIVE with score 0.400000
+# Sample Output
 ```
+2017/03/10 09:53:21 Starting Stream...
 
-# What happens when we combine it with entites / subject matter
+2017/03/10 09:53:23 Entity name:  RT @InxsyS
+2017/03/10 09:53:23 Entity name:  Trump
+2017/03/10 09:53:23 Entity name:  'T
+2017/03/10 09:53:23 Entity name:  Repugnants
+2017/03/10 09:53:23 Entity name:  LIE
+2017/03/10 09:53:23 Entity name:  Sphincter
+2017/03/10 09:53:23 Entity name:  LIE
+2017/03/10 09:53:23 Entity name:  ADMINISTRATION
+2017/03/10 09:53:23 Entity name:  PUBLIC
+2017/03/10 09:53:23 Entity name:  AMERICAN
+2017/03/10 09:53:23 RT @InxsyS: Trump,Sphincter &amp;  All Repugnants- YOU DON'T GET TO TELL LIE AFTER LIE TO THE AMERICAN PUBLIC--THEN SAY YOUR ADMINISTRATION IS… is NEGATIVE with score -0.600000
 
-```
-2017/03/09 17:03:45 RT @immigrant4trump: Tim Kaine’s Son Arrested For Rioting At Pro-Trump Rally #maga #Trump https://t.co/SaDyJkIOMP is POSITIVE with score 0.600000
-2017/03/09 17:03:51 Entity name:  RT @hrkbenowen
-2017/03/09 17:03:51 Entity name:  Obama
-2017/03/09 17:03:51 Entity name:  Jobs
-2017/03/09 17:03:51 Entity name:  Jobs Are Just Not Coming Back
-2017/03/09 17:03:51 Entity name:  First Month https://t.co/IPyNpnHlK6
-2017/03/09 17:03:51 RT @hrkbenowen: Flashback: Obama Says "Jobs Are Just Not Coming Back" ...Then Trump Adds 298,000 Jobs in First Month https://t.co/IPyNpnHlK6 is NEGATIVE with score -0.600000
-2017/03/09 17:03:56 Entity name:  RT @JohnWDean
-2017/03/09 17:03:56 Entity name:  Trump
-2017/03/09 17:03:56 Entity name:  moles
-2017/03/09 17:03:56 Entity name:  posts
-2017/03/09 17:03:56 Entity name:  Deep State
-2017/03/09 17:03:56 Entity name:  Senate
-2017/03/09 17:03:56 Entity name:  executive bureaucracy w
-2017/03/09 17:03:56 RT @JohnWDean: Trump's "Deep State:" 100s of Trump moles infiltrate the executive bureaucracy w/o filling Senate confirmable posts: https:/… is NEGATIVE with score -0.100000
+
+2017/03/10 09:53:26 Entity name:  Alec Baldwin
+2017/03/10 09:53:26 Entity name:  This Is the One
+2017/03/10 09:53:26 Entity name:  Donald Trump
+2017/03/10 09:53:26 Entity name:  https://t.co/XXarEybxTE https://t.co/FnG55iSbvn
+2017/03/10 09:53:26 This Is the One Thing Alec Baldwin Likes About Donald Trump https://t.co/XXarEybxTE https://t.co/FnG55iSbvn is POSITIVE with score 0.700000
+
+
+2017/03/10 09:53:28 Entity name:  RT @CBSThisMorning
+2017/03/10 09:53:28 Entity name:  Trump
+2017/03/10 09:53:28 Entity name:  Sean Spicer
+2017/03/10 09:53:28 Entity name:  White House
+2017/03/10 09:53:28 Entity name:  investigation
+2017/03/10 09:53:28 Entity name:  Justice Department
+2017/03/10 09:53:28 RT @CBSThisMorning: Sean Spicer says White House is "not aware" of any Justice Department investigation into President Trump. https://t.co/… is POSITIVE with score 0.200000
+
+
+2017/03/10 09:53:34 Entity name:  A Brand Name
+2017/03/10 09:53:34 Entity name:  Hedge Fund Happy Hour: Trump
+2017/03/10 09:53:34 Entity name:  Mar-a-Lago
+2017/03/10 09:53:34 Entity name:  NYT
+2017/03/10 09:53:34 Entity name:  The New York Times https://t.co/tBP18mNEb9
+2017/03/10 09:53:34 Entity name:  ALEXANDRA STEVENSON
+2017/03/10 09:53:34 "A Brand Name for a Hedge Fund Happy Hour: Trump’s Mar-a-Lago" by ALEXANDRA STEVENSON via NYT The New York Times https://t.co/tBP18mNEb9 is POSITIVE with score 0.600000
 ```
 
